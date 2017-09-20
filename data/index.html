@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PLAYERUNKNOWN'S BATTLE ROYALE ORIGINAL</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        var _dev_ = false;
+        var broConfiguration =
+        {     "gate": "https://prod-live-front.playbattlegrounds.com/index.html",     "uri": "https://prod-live-entry.playbattlegrounds.com/publicproxy",     "entry": "ws://prod-live-entry.playbattlegrounds.com:81/userproxy",     "secureEntry": "wss://prod-live-entry.playbattlegrounds.com/userproxy",     "useSecure": true,     "credential": {         "steam": "provider={provider}&ticket={ticket}&playerNetId={playerNetId}&cc={cc}&clientGameVersion={clientGameVersion}"     },     "verreq": "2.6.26",     "LayoutMode": "",     "LanpartyHome": "http://52.59.158.42/Dreamhack/Game/{accountId}/day1_qualifying/1" }
+        var production = true;
+    </script>
+    <link href="css/coherent.mock.style.css" rel="stylesheet" type="text/css">
+    <script src="js/coherent.js"></script>
+<link href="css/styles.11d167c4ef1903afd5f0.bundle.css" rel="stylesheet"></head>
+<body oncontextmenu="return false;">
+    <app>
+        <section class="bro-playarea bro-loading">
+            <div class="bro-lastbg"></div>
+            <div class="bro-colorbg"></div>
+
+            <!--loading-->
+            <div class="bro-condition-loading">
+                <p class="cdt-text">LOADING</p>
+                <p class="desc-text">BATTLEGROUNDS</p>
+            </div>
+        </section>
+    </app>
+
+    <script src="js/coherent.mock.js"></script>
+    <script src="js/mock.entry.js"></script>
+    <script>
+        engine.hideOverlay();
+        //engine.call('GetGameVersion').then(result =>{
+        //    console.log('get game version', result);
+        //    var unrealVersion = result;
+        //    $('.build-ver').text(unrealVersion);
+        //});
+    </script>
+    <script>
+        var ua = navigator.userAgent;
+        if (ua.lastIndexOf('Chrome/') > 0) {
+            var version = ua.substr(ua.lastIndexOf('Chrome/') + 7, 2);
+            if (version >= 53) {
+                console.log(ua, version);
+                _dev = true;
+                document.body.classList.add("chrome");
+            }
+        }
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    </script>
+<script type="text/javascript" src="js/inline.55877f402e329a4a5cd0.bundle.js"></script><script type="text/javascript" src="js/polyfills.1206cbaabea1857a1ff7.bundle.js"></script><script type="text/javascript" src="js/vendor.e3c20b31fafd54c52413.bundle.js"></script><script type="text/javascript" src="js/main.56f1057271fbe0085a8b.bundle.js"></script></body>
+</html>
+
