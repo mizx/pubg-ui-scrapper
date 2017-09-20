@@ -1,0 +1,27 @@
+{
+  "name": "pubg-ui-history",
+  "version": "1.0.0",
+  "description": "Repository of PlayerUnknown Battlegrounds UI source code.",
+  "main": "index.js",
+  "dependencies": {
+    "request": "^2.82.0",
+    "request-promise": "^4.2.1",
+    "rimraf": "^2.6.2",
+    "website-scraper": "^3.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "rimraf data && node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mizx/pubg-ui-history.git"
+  },
+  "author": "Cody Mathisen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mizx/pubg-ui-history/issues"
+  },
+  "homepage": "https://github.com/mizx/pubg-ui-history#readme"
+}
