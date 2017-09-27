@@ -1,6 +1,8 @@
 const scrape = require('website-scraper');
 const request = require('request-promise');
 
+const ResourceSaver = require('./resource-saver');
+
 const REGEX_URL = /(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[-A-Z0-9+&@#\/%=~_|$?!:,.])*(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[A-Z0-9+&@#\/%=~_|$])/im;
 const ROOT_URL = 'http://front.battlegroundsgame.com/index.html';
 
@@ -19,7 +21,8 @@ async function getUrl() {
 async function scrapeUrl(url) {
   const options = {
     urls: [url],
-    directory: 'data'
+    directory: 'data',
+    resourceSaver: ResourceSaver
   };
 
   const responses = await scrape(options);
