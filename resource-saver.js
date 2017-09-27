@@ -13,20 +13,33 @@ class ResourceSaver {
   }
 
   saveResource(resource) {
-    const text = resource.getText();
-    let filename = resource.getFilename();
+    const body = resource.getText();
+    const filename = resource.getFilename();
 
     if (filename.match(REGEX)) {
       // if filename is hashed, remove the hash
-      filename = filename.replace(REGEX, `$1.$3`);
+      const unhashedFilename = filename.replace(REGEX, `$1.$3`);
+
+      this.writeFile(unhashedFilename, body)
+        .then(() => {
+          this.loadedResources.push(resource);
+        });
     }
 
-    const absoluteFilename = path.join(this.absoluteDirectoryPath, filename);
-
-    return fs.outputFile(absoluteFilename, text, { encoding: 'binary' })
+    return this.writeFile(filename, body)
       .then(() => {
         this.loadedResources.push(resource);
       });
+  }
+
+  absoluteFilename(filename) {
+    return path.join(this.absoluteDirectoryPath, filename);
+  }
+
+  writeFile(filename, body) {
+    filename = this.absoluteFilename(filename);
+
+    return fs.outputFile(filename, body, { encoding: 'binary' });
   }
 
   errorCleanup(error) {
