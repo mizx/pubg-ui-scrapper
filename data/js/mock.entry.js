@@ -110,9 +110,18 @@
 		};
 	}, true);
 
+	engine.mock('IsXYRunning', function() {
+		return false;
+	}, true);
+
+	engine.mock('CheckXYInstalledAndExecute', function(r, args) {
+		console_log('checkxy');
+		return false;
+	}, true);
+
 	engine.mock('GetGameVersion', function () {
 		return "1.2.3"
-	}, true)
+	}, true);
 
 	engine.mock('OpenExternalBrowser', function(u) {
 		window.open(u);
